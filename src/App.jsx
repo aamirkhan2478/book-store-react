@@ -1,8 +1,6 @@
-import React from "react";
-import Routers from "./Routers";
+import React from 'react';
+import Routers from './Routers';
 
-const App = () => {
-  return <Routers />;
-};
+const App = () => <Routers />;
 
 export default App;
