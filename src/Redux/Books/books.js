@@ -1,5 +1,8 @@
-import { ADD_BOOK, REMOVE_BOOK } from './bookTypes';
+// Action Types
+export const ADD_BOOK = 'Books/books/ADD_BOOK';
+export const REMOVE_BOOK = 'Books/books/REMOVE_BOOK';
 
+// Initial State
 const initialState = {
   books: [],
   isLoading: false,

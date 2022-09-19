@@ -1,5 +1,7 @@
-import SHOW_STATUS from './categoriesTypes';
+// Action Types
+export const SHOW_STATUS = 'Books/books/SHOW_STATUS';
 
+// initial State
 const initialState = {
   categories: [],
   isLoading: false,
