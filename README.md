@@ -62,3 +62,6 @@ Contributions, issues, and feature requests are welcome!
 - My standup team :bow_and_arrow:
 - My family's support :raised_hands:
 
+## :memo: License
+
+This project is [MIT](./LICENSE) licensed.
