@@ -22,9 +22,9 @@ const Form = () => {
 
   const clickHandler = (e) => {
     e.preventDefault();
-    setValues({ id: uuidv4() });
+    setValues({ id: uuidv4(), title: '', author: ''});
     dispatch(addBook(values));
-    setValues({ id: '', title: '', author: '' });
+    // setValues({ id: '', title: '', author: '' });
   };
 
   return (
