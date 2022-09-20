@@ -1,12 +1,10 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { v4 as uuidv4 } from "uuid";
-import Book from "./Book";
-import Form from "./Form";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import Book from './Book';
+import Form from './Form';
 
 const BookList = () => {
   const { books } = useSelector((state) => state.book);
-  console.log(books);
   return (
     <>
       <table>
@@ -17,9 +15,9 @@ const BookList = () => {
             <th>Actions</th>
           </tr>
         </thead>
-        {books.map((book, index) => (
+        {books.map((book) => (
           <Book
-            key={index}
+            key={book.id}
             title={book.title}
             author={book.author}
             button="Remove"

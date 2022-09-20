@@ -1,32 +1,30 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
-import { addBook } from "../../Redux/Books/books";
-import { v4 as uuidv4 } from "uuid";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook } from '../../Redux/Books/books';
 
 const Form = () => {
   const [values, setValues] = useState({
     id: uuidv4(),
-    title: "",
-    author: "",
+    title: '',
+    author: '',
   });
 
   const dispatch = useDispatch();
 
   const changeHandler = (e) => {
     const { name, value } = e.target;
-    setValues((preData) => {
-      return {
-        ...preData,
-        [name]: value,
-      };
-    });
+    setValues((preData) => ({
+      ...preData,
+      [name]: value,
+    }));
   };
 
   const clickHandler = (e) => {
     e.preventDefault();
     setValues({ id: uuidv4() });
     dispatch(addBook(values));
-    setValues({ id: "", title: "", author: "" });
+    setValues({ id: '', title: '', author: '' });
   };
 
   return (

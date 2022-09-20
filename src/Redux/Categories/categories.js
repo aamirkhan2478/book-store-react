@@ -1,5 +1,5 @@
 // Action Types
-export const SHOW_STATUS = "Books/books/SHOW_STATUS";
+export const SHOW_STATUS = 'Books/books/SHOW_STATUS';
 
 // initial State
 const initialState = {
@@ -28,7 +28,7 @@ const categoriesReducer = (state = initialState, action) => {
 export const checkStatus = () => (dispatch) => {
   dispatch({
     type: SHOW_STATUS,
-    payload: "Under Construction",
+    payload: 'Under Construction',
   });
 };
 

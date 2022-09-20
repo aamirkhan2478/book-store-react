@@ -1,8 +1,10 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import { removeBook } from "../../Redux/Books/books";
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../../Redux/Books/books';
 
-const Book = ({ title, author, button, id }) => {
+const Book = ({
+  title, author, button, id,
+}) => {
   const dispatch = useDispatch();
 
   const clickHandler = () => {
