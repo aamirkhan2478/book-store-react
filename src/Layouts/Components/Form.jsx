@@ -1,11 +1,53 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addBook } from "../../Redux/Books/books";
+import { v4 as uuidv4 } from "uuid";
 
-const Form = () => (
-  <form>
-    <input type="text" placeholder="Title" />
-    <input type="text" placeholder="Author" />
-    <button type="submit">Submit</button>
-  </form>
-);
+const Form = () => {
+  const [values, setValues] = useState({
+    id: uuidv4(),
+    title: "",
+    author: "",
+  });
+
+  const dispatch = useDispatch();
+
+  const changeHandler = (e) => {
+    const { name, value } = e.target;
+    setValues((preData) => {
+      return {
+        ...preData,
+        [name]: value,
+      };
+    });
+  };
+
+  const clickHandler = (e) => {
+    e.preventDefault();
+    setValues({ id: uuidv4() });
+    dispatch(addBook(values));
+    setValues({ id: "", title: "", author: "" });
+  };
+
+  return (
+    <form onSubmit={clickHandler}>
+      <input
+        type="text"
+        name="title"
+        placeholder="Title"
+        value={values.title}
+        onChange={changeHandler}
+      />
+      <input
+        type="text"
+        name="author"
+        placeholder="Author"
+        value={values.author}
+        onChange={changeHandler}
+      />
+      <button type="submit">Submit</button>
+    </form>
+  );
+};
 
 export default Form;

@@ -1,12 +1,11 @@
-// Action Types
-export const ADD_BOOK = 'Books/books/ADD_BOOK';
-export const REMOVE_BOOK = 'Books/books/REMOVE_BOOK';
+//Action Types
+export const ADD_BOOK = "Books/books/ADD_BOOK";
+export const REMOVE_BOOK = "Books/books/REMOVE_BOOK";
 
 // Initial State
 const initialState = {
   books: [],
   isLoading: false,
-  getId: null,
 };
 
 // Reducers
@@ -17,13 +16,13 @@ const bookReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        payload,
+        books: [...state.books, payload],
       };
     case REMOVE_BOOK:
       return {
         ...state,
         isLoading: false,
-        getId: state.books.filter((book) => book.id !== payload),
+        books: state.books.filter(book => book.id !== payload),
       };
     default:
       return state;
