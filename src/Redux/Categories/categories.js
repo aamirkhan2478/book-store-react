@@ -18,7 +18,6 @@ const categoriesReducer = (state = initialState, action) => {
         categories: [...state.categories, payload],
         isLoading: false,
       };
-
     default:
       return state;
   }

@@ -1,0 +1,14 @@
+.navbar {
+  display: flex;
+  gap: 10px;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.nav > li > a {
+  text-decoration: none;
+}
