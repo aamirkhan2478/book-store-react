@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { showBook } from '../../Redux/Books/books';
+import { getBooks } from '../../Redux/Books/books';
 import Book from './Book';
 import Form from './Form';
 
@@ -8,8 +8,9 @@ const BookList = () => {
   const { books } = useSelector((state) => state.book);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(showBook());
+    dispatch(getBooks());
   }, []);
+
   return (
     <>
       <table>

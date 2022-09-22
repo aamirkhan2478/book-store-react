@@ -1,10 +1,12 @@
-import axios from 'axios';
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import axios from "axios";
 
 // Action Types
-export const ADD_BOOK = 'Books/books/ADD_BOOK';
-export const REMOVE_BOOK = 'Books/books/REMOVE_BOOK';
-export const SHOW_BOOKS = 'Books/books/SHOW_BOOKS';
-const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/r7doi2LDN8wnS0R7kWU8/books';
+export const ADD_BOOK = "Books/books/ADD_BOOK";
+export const REMOVE_BOOK = "Books/books/REMOVE_BOOK";
+export const SHOW_BOOKS = "Books/books/SHOW_BOOKS";
+const baseUrl =
+  "https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/r7doi2LDN8wnS0R7kWU8/books";
 
 // Initial State
 const initialState = {
@@ -12,6 +14,8 @@ const initialState = {
   isLoading: false,
   msg: {},
 };
+
+
 
 // Reducers
 const bookReducer = (state = initialState, action) => {
@@ -42,8 +46,9 @@ const bookReducer = (state = initialState, action) => {
 };
 
 // Actions
-export const showBook = () => async (dispatch) => {
-  try {
+export const getBooks = createAsyncThunk(
+  SHOW_BOOKS,
+  async (args, { dispatch }) => {
     const { data } = await axios.get(baseUrl);
     const books = Object.keys(data).map((key) => {
       const book = data[key][0];
@@ -56,10 +61,9 @@ export const showBook = () => async (dispatch) => {
       type: SHOW_BOOKS,
       payload: books,
     });
-  } catch (error) {
-    console.error(error.response.data.error);
+    return books;
   }
-};
+);
 
 export const addBook = (values) => async (dispatch) => {
   try {
@@ -68,7 +72,7 @@ export const addBook = (values) => async (dispatch) => {
       type: ADD_BOOK,
       payload: data.msg,
     });
-    dispatch(showBook());
+    dispatch(getBooks());
   } catch (error) {
     console.error(error.response.data.error);
   }
