@@ -5,9 +5,9 @@ import { addBook } from '../../Redux/Books/books';
 
 const Form = () => {
   const [values, setValues] = useState({
-    id: uuidv4(),
     title: '',
     author: '',
+    category: '',
   });
 
   const dispatch = useDispatch();
@@ -22,9 +22,12 @@ const Form = () => {
 
   const clickHandler = (e) => {
     e.preventDefault();
-    setValues({ id: uuidv4(), title: '', author: ''});
-    dispatch(addBook(values));
-    // setValues({ id: '', title: '', author: '' });
+    const newBook = {
+      item_id: uuidv4(),
+      ...values,
+    };
+    dispatch(addBook(newBook));
+    setValues({ title: '', author: '', category: '' });
   };
 
   return (
@@ -43,6 +46,15 @@ const Form = () => {
         value={values.author}
         onChange={changeHandler}
       />
+      <select name="category" value={values.category} onChange={changeHandler}>
+        <option>Select Category</option>
+        <option>Crime and Thriller</option>
+        <option>Religious and Self-help</option>
+        <option>Humor</option>
+        <option>Fantasy</option>
+        <option>Sci-fi</option>
+        <option>Fiction</option>
+      </select>
       <button type="submit">Submit</button>
     </form>
   );

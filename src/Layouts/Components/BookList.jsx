@@ -1,10 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { getBooks } from '../../Redux/Books/books';
 import Book from './Book';
 import Form from './Form';
 
 const BookList = () => {
   const { books } = useSelector((state) => state.book);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getBooks());
+  }, []);
+
   return (
     <>
       <table>
@@ -12,6 +18,7 @@ const BookList = () => {
           <tr>
             <th>Title</th>
             <th>Author</th>
+            <th>Category</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -20,6 +27,7 @@ const BookList = () => {
             key={book.id}
             title={book.title}
             author={book.author}
+            category={book.category}
             button="Remove"
             id={book.id}
           />
