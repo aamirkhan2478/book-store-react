@@ -1,0 +1,228 @@
+.card {
+  width: 75rem;
+  height: 10.625rem;
+  margin: 2.313rem 6.25rem 0;
+  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  display: flex;
+}
+
+.left-section > p {
+  width: 3.063rem;
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.left-section > h3 {
+  width: 12.313rem;
+  height: 1.813rem;
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+}
+
+.left-section > span {
+  width: 6.688rem;
+  height: 1.188rem;
+  margin: 0.25rem 0 0;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+}
+
+.actions {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.actions > li {
+  border-right: 1px solid #e8e8e8;
+  padding: 2px;
+  width: 4.563rem;
+  height: 1.188rem;
+  margin: 0.188rem 0.938rem 0.125rem 0;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+  cursor: pointer;
+}
+
+.actions > li:nth-child(3) {
+  border: none;
+}
+
+.percentages > h2 {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 1rem 0 0.688rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 35px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.percentages > p {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 1rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.875rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.middle-section {
+  display: flex;
+  align-items: center;
+  border-right: solid 1px #e8e8e8;
+  margin-right: 100px;
+}
+
+.wrap {
+  width: 120px;
+  height: 120px;
+  background: lightgray;
+  border-radius: 50%;
+  border: 1px solid #cdcbd0;
+}
+
+.mask > .fill {
+  clip: rect(0, 75px, 150px, 0);
+  background-color: #227ded;
+}
+
+.mask.full,
+.circle .fill {
+  animation: fill ease-in-out 3s;
+  transform: rotate(135deg);
+}
+
+.wrap .circle .mask,
+.wrap .circle .fill {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.wrap .circle .mask {
+  clip: rect(0, 150px, 150px, 75px);
+}
+
+.wrap .inside-circle {
+  width: 103px;
+  height: 103px;
+  border-radius: 50%;
+  background: #fff;
+  line-height: 120px;
+  text-align: center;
+  margin-top: 9px;
+  margin-left: 9px;
+  color: #1e51dc;
+  position: absolute;
+  z-index: 100;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+@keyframes fill {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(135deg);
+  }
+}
+
+.current-chapter {
+  opacity: 0.5;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}
+
+.chapter {
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100rem;
+  height: 7rem;
+}
+
+.right-section button {
+  width: 11.5rem;
+  height: 2.063rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  font-family: "RobotoSlab", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  border-color: #0290ff;
+}
+
+.right-section button:hover {
+  background-color: #0970be;
+}

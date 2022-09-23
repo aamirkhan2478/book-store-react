@@ -6,7 +6,7 @@ import CategoriesPage from '../Layouts/Pages/CategoriesPage';
 
 const Routers = () => (
   <Routes>
-    <Route path="/" element={<Navbar />}>
+    <Route element={<Navbar />}>
       <Route path="/" element={<BookPage />} />
       <Route path="/categories" element={<CategoriesPage />} />
     </Route>
