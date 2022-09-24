@@ -4,11 +4,17 @@ This is simple react web application we store some books and check the list of b
 
 ## Built With
 
+- HTML
+- CSS
 - React JS
 - React Router Dom
+- Redux Toolkit
 
 ## Screen Shots
+![Screen Shots](src/Layouts/Assets/Images/book-store.png)
 
+## Live Preview
+[Live Demo](https://aamir-book-store.netlify.app/)
 
 ## Getting Started
 
@@ -32,10 +38,7 @@ To get a local copy of this exercise, Please follow these simple example steps.
 ### Run this command to build your webpack
 
 > npm run build
-> 
-### Run this command to test our project
 
-> npm run test
 
 ## Authors
 
