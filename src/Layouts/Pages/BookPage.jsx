@@ -1,19 +1,14 @@
-import React from 'react';
-import BookList from '../Components/BookList';
+import React from "react";
+import { Container } from "react-bootstrap";
+import BookList from "../Components/BookList";
 
 const BookPage = () => {
-  document.title = 'Book Store | Books';
-
-  const container = {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  };
+  document.title = "Book Store | Books";
 
   return (
-    <div style={container}>
+    <Container className="d-flex flex-column align-items-center">
       <BookList />
-    </div>
+    </Container>
   );
 };
 
